@@ -1,11 +1,21 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-def get_hello(request):
-    return  HttpResponse("Hello", headers={"name": "alex"}, status=500)
+from django.shortcuts import render
 
-def get_contacts(request):
-    return HttpResponse("number")
+def get_index(request):
+    context = {
+        "title" : "Главная страница",
+        "my_list" : [1, 2, 3, 4]
+    }
+    return render(request, "blog/index.html", context=context)
+    
 
 def get_about(request):
-    return HttpResponse("about")
+    context = {
+        "title" : "Страница о нас"
+    }
+    return render(request, "blog/about.html", context=context)
+
+def get_contacts(request):
+    context = {
+        "title" : "Как с нами связаться"
+    }
+    return render(request, "blog/contacts.html", context=context)
