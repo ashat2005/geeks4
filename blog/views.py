@@ -12,10 +12,10 @@ def get_about(request):
     context = {
         "title" : "Страница о нас"
     }
-    return render(request, "blog/about.html", context=context)
+    return render(request, "blog/about.html", context=None)
 
 def get_contacts(request):
     context = {
         "title" : "Как с нами связаться"
     }
-    return render(request, "blog/contacts.html", context=context)
+    return render(request, "blog/contacts.html", context=None)
